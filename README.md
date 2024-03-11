@@ -1,9 +1,10 @@
-# Package.json is the configuration file for NPM(node package manager)
+- Package.json is the configuration file for NPM(node package manager)
 
-# For igniting our app we have to install the packages which will helps to give super power to our app.
-* Very first package we need to install is bundler.
-* Q. What is bundler?
-# --> Bundler is the tools which will help to manage the dependencies and some other assests of the react application, and packages in a single file that can be go for production level.
+- For igniting our app we have to install the packages which will helps to give super power to our app.
+
+- Very first package we need to install is bundler.
+Q.) What is bundler?
+--> Bundler is the tools which will help to manage the dependencies and some other assests of the react application, and packages in a single file that can be go for production level.
 Different different bundlers present, some of them are webpac, parcel, vite etc..
 
 We are going with the parcel bundler.
