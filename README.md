@@ -45,3 +45,11 @@ After run "npx parcel index.html" it will help to create local server for us and
 - Differential bundling -> It means it manage the project on older version also.
 - Error handling
 - Tree Shaking -> It means it will remove the unwanted things from the code, which is not required for the development
+
+****************************************************************************************************************************************
+# Points:-
+- JSX is not understand by the browser
+- Browser can understand ES6 (Eccmascript)
+- When we write JSX then behind the scene JSX will convert into browser understandable language 
+- This is done by the parcel but parcel donot do it by own, it will done by babel. So parcel act like a manager.
+- JSX create the react element.

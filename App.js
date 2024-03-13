@@ -1,4 +1,4 @@
-const element = React.createElement(
+/*const element = React.createElement(
     "h1",
     { id: "heading" }, // In this object we pass the attributes to it like id,class etc.
     "Hello world from React"
@@ -27,7 +27,7 @@ For example if we want to create like:-
 </div>
 */
 // Above things done by react in this way:-
-const parent = React.createElement(
+/*const parent = React.createElement(
     "div",
     { id: "parent" },
     React.createElement(
@@ -38,3 +38,38 @@ const parent = React.createElement(
 )
 // After writing this code it will be very complicated if so many nested and siblings will be present. But we know react makes our code easy. This can be possible with the help of JSX.
 // So the rumerous that react cant be written without JSX is wrong. JSX helps to write code in easy way
+*/
+
+const element = React.createElement(
+    "h1",
+    { id: "heading" },
+    "Hello world from React"
+);
+
+// We can create the above react element with the help of JSX
+const elementJSX = <h1 id="heading" >Hello world from Reaxt</h1>
+// These two are totally equivalent.
+/*
+ * Important point
+    -> React element is an object and JSX is syntax, We can create react element using JSX.
+    -> JSX is not html inside Javascript.
+    -> It is Like html inside javascript.
+ */
+
+/************** Component **************/
+// Functional Component 
+// --> It is just a javascript function 
+// --> It return a react element or JSX
+const navigation = () => {
+    return <h1>Functional Component</h1>
+}
+
+// For rendering the functional component we use the Syntax
+const root = ReactDOM.creatroot(document.getElementById("root"));
+root.render(<navigation/>)
+
+// For rendering the react element 
+root.render(elementJSX)
+
+
+
