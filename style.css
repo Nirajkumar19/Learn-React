@@ -1,0 +1,25 @@
+body{
+    background-color: black;
+    color: white;
+}
+
+.Header{
+    /* border: 2px solid red; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0px 8px;
+}
+.logo{
+    /* border: 2px solid blue; */
+    padding-top: 8px;
+}
+li{
+    list-style-type: none;
+    display: inline-block;
+    padding: 0px 8px;
+}
+
+.detail-container{
+    border: 2px solid red;
+}

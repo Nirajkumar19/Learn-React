@@ -53,3 +53,9 @@ After run "npx parcel index.html" it will help to create local server for us and
 - When we write JSX then behind the scene JSX will convert into browser understandable language 
 - This is done by the parcel but parcel donot do it by own, it will done by babel. So parcel act like a manager.
 - JSX create the react element.
+- JSX will sanitize all the code first and then execute it, so worries of any Cross-site scripting
+
+# At the end of the day:-
+- JSX is the React.createElement --> it means react element
+- React element is the object
+- Functional compoment is simple javascript function
