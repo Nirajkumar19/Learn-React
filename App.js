@@ -128,22 +128,24 @@ const Header = () => {
     )
 }
 
-const RestoComponent = () => {
+const RestoComponent = (props) => {
+    const {resData} = props; // Destructuring the objects.
     return (
         <div className="detail-container">
             <img className="food-image" src="https://b.zmtcdn.com/data/pictures/3/20211563/a31c86a45e40c46ba4f619773cc32b4c.jpg?fit=around|300:273&crop=300:273;*,*"></img>
             <div className="itme-name">
-                <h3>Tara Maa</h3>
+                <h3>{resData.resName}</h3>
             </div>
             <div className="rating">
-                <p>4.5</p>
+                <p>{resData.rating}</p>
             </div>
             <div className="time">
-                <p>40mins</p>
+                <p>{resData.timeToDeliver}</p>
             </div>
         </div>
     )
 }
+/*
 const Body = () => {
     return (
         <div className="body">
@@ -151,7 +153,38 @@ const Body = () => {
                 <p>Search</p>
             </div>
             <div className="resto-container">
-                <RestoComponent />
+                <RestoComponent resName="TaraMaa" rating="4.5" timeToDeliver="20mins" />
+                <RestoComponent resName="KFC" rating="4.6" timeToDeliver="10mins"/>
+
+            </div>
+        </div>
+    )
+}
+
+All props wrap in an object and then pass it to the module.
+For every we don't pass the data as props differently.
+We can create array list of the object of data which we want to pass as props.
+*/
+const resList = [{
+    "resName": "TaraMaa",
+    "rating": "4.5",
+    "timeToDeliver": "20mins" 
+},
+{
+    "resName": "KFC",
+    "rating": "4.6",
+    "timeToDeliver": "10mins" 
+}]
+
+
+const Body = () => {
+    return (
+        <div className="body">
+            <div className="search">
+                <p>Search</p>
+            </div>
+            <div className="resto-container">
+                {resList.map((res) => (<RestoComponent resData={res} />))}
             </div>
         </div>
     )

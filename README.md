@@ -59,3 +59,4 @@ After run "npx parcel index.html" it will help to create local server for us and
 - JSX is the React.createElement --> it means react element
 - React element is the object
 - Functional compoment is simple javascript function
+- Props are nothing but argument
