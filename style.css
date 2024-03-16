@@ -12,7 +12,8 @@ body{
 }
 .logo{
     /* border: 2px solid blue; */
-    padding-top: 8px;
+    max-width: 80px;
+    border-radius: 10px;
 }
 li{
     list-style-type: none;
@@ -26,11 +27,12 @@ li{
     justify-content: space-around;
 }
 .detail-container{
-    border: 2px solid red;
+    /* border: 2px solid red; */
     padding-left: 8px;
     padding-top: 4px;
     padding-right: 8px;
     max-width: 200px;
+    overflow-wrap: break-word;
 }
 
 .food-image{

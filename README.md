@@ -60,3 +60,29 @@ After run "npx parcel index.html" it will help to create local server for us and
 - React element is the object
 - Functional compoment is simple javascript function
 - Props are nothing but argument
+- Hooks is a javascript function with some superpower
+
+# Types of Exports
+1) Default export:- In this type of export, during import we don't need "{}" this bracket.
+- Syntax:
+export default <component_name>
+import <component_name> from <file_path>
+2) Named export:- In this type of export, during import we need "{}" this bracket.
+- Syntax:
+export const <component_name>
+import { <component_name> } from <file_path>
+
+# Hooks
+- Hooks is nothing but a powerful super function.
+
+Types of Hooks:-
+1) useState() -> return a superpower arr.
+2) useEffect
+
+
+# Virtual DOM:-
+Virtual DOM is nothing but the javascript object. When we creat the react element then at the end of the day it is an object so that object is nothing but the virtual DOM.
+
+# Reconcillation algorithm:-
+- Reconciliation is React's way of diffing the virtual DOM tree with the updated virtual DOM to determine the most efficient way to update the real DOM. This process allows React to apply only the necessary changes to the DOM, avoiding the costly operation of updating the entire DOM tree.
+- This is also called Diffing algorithm.

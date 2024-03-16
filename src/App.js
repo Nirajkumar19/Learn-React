@@ -109,86 +109,11 @@ root.render(<Navigation/>)*/
  */
 
 
-const Header = () => {
-    return (
-        <div className="Header">
-            <div className="logo-container">
-                {/* <img src="https://b.zmtcdn.com/data/pictures/3/20211563/a31c86a45e40c46ba4f619773cc32b4c.jpg?fit=around|300:273&crop=300:273;*,*"></img> */}
-                <p className="logo">Logo</p>
-            </div>
-            <div className="nav-item">
-                <ul>
-                    <li>Home</li>
-                    <li>About Us</li>
-                    <li>Cart</li>
-                </ul>
-            </div>
-            
-        </div>
-    )
-}
-
-const RestoComponent = (props) => {
-    const {resData} = props; // Destructuring the objects.
-    return (
-        <div className="detail-container">
-            <img className="food-image" src="https://b.zmtcdn.com/data/pictures/3/20211563/a31c86a45e40c46ba4f619773cc32b4c.jpg?fit=around|300:273&crop=300:273;*,*"></img>
-            <div className="itme-name">
-                <h3>{resData.resName}</h3>
-            </div>
-            <div className="rating">
-                <p>{resData.rating}</p>
-            </div>
-            <div className="time">
-                <p>{resData.timeToDeliver}</p>
-            </div>
-        </div>
-    )
-}
-/*
-const Body = () => {
-    return (
-        <div className="body">
-            <div className="search">
-                <p>Search</p>
-            </div>
-            <div className="resto-container">
-                <RestoComponent resName="TaraMaa" rating="4.5" timeToDeliver="20mins" />
-                <RestoComponent resName="KFC" rating="4.6" timeToDeliver="10mins"/>
-
-            </div>
-        </div>
-    )
-}
-
-All props wrap in an object and then pass it to the module.
-For every we don't pass the data as props differently.
-We can create array list of the object of data which we want to pass as props.
-*/
-const resList = [{
-    "resName": "TaraMaa",
-    "rating": "4.5",
-    "timeToDeliver": "20mins" 
-},
-{
-    "resName": "KFC",
-    "rating": "4.6",
-    "timeToDeliver": "10mins" 
-}]
+import Header from "./components/Header";
+import Body from "./components/Body";
 
 
-const Body = () => {
-    return (
-        <div className="body">
-            <div className="search">
-                <p>Search</p>
-            </div>
-            <div className="resto-container">
-                {resList.map((res) => (<RestoComponent resData={res} />))}
-            </div>
-        </div>
-    )
-}
+
 const Applayout = () =>{
     return (
         <div className="applayout">
