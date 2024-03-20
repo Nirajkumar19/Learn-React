@@ -77,7 +77,7 @@ import { <component_name> } from <file_path>
 
 Types of Hooks:-
 1) useState() -> return a superpower arr.
-2) useEffect
+2) useEffect -> Render the data after the component render cycle is completed
 
 
 # Virtual DOM:-
@@ -86,3 +86,16 @@ Virtual DOM is nothing but the javascript object. When we creat the react elemen
 # Reconcillation algorithm:-
 - Reconciliation is React's way of diffing the virtual DOM tree with the updated virtual DOM to determine the most efficient way to update the real DOM. This process allows React to apply only the necessary changes to the DOM, avoiding the costly operation of updating the entire DOM tree.
 - This is also called Diffing algorithm.
+
+
+# Approach to render the UI
+1) Load the website -> Get the data from APIs -> Render the data in the component
+2) Load the website -> Render the component -> Get data from APIs -> Fill the already rendered with new coming data
+
+For second approach, we use useEffect() hook.
+Because first it render the component and then after finish it, it will again render the data.
+
+useEffect() -> It takes two argument a. callback function b. Dependencies array
+useEffect(()=>{},[]);
+
+This callback function will call when the render cycle complete.

@@ -39,3 +39,15 @@ li{
     
     max-width: 190px;
 }
+
+.shimmer-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.shimmer{
+    width: 200px;
+    height: 250px;
+    margin-bottom: 20px;
+    background-color: rgb(206, 203, 203);
+}
