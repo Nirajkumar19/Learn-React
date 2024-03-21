@@ -76,7 +76,7 @@ import { <component_name> } from <file_path>
 - Hooks is nothing but a powerful super function.
 
 Types of Hooks:-
-1) useState() -> return a superpower arr.
+1) useState() -> return a superpower arr. UseState will rerender the whole component after changing with the new value in state variable. It means whenever state variable change, react do the reconcillation cycle(Re-render the component).
 2) useEffect -> Render the data after the component render cycle is completed
 
 

@@ -28,17 +28,17 @@ We can create array list of the object of data which we want to pass as props.
 
 const Body = () => {
     const [restoList,setrestoList] = useState([]); // Array Destructuring
-    const topRatedfilterfun = () => {
-        const filterresto = restoList.filter((res) => res.info.avgRating>4);
-        setrestoList(filterresto);
-        
-    }
+    const [temprestoList,settemprestoList] = useState([]);
+
+    const [textValue,settextValue] = useState("");
+    
 
     /* Use Effect*/
     const fetchData = async () => {
         const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.89960&lng=80.22090&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
         const jsonData = await data.json();
         setrestoList(jsonData.data.cards[1].card.card.gridElements.infoWithStyle.restaurants);
+        settemprestoList(jsonData.data.cards[1].card.card.gridElements.infoWithStyle.restaurants);
         // By using the useEffect() the page will render very fast after nothing on the display which is not a good user experiance.
         // For great user experiance we have to use the concept of "Shimmer UI".
     };
@@ -48,16 +48,35 @@ const Body = () => {
         fetchData();
     },[]);
     
+
+    const changeTextValue = (e) =>{
+        settextValue(e.target.value);
+    }
+    
+    const topRatedfilterfun = () => {
+        const filterresto = restoList.filter((res) => res.info.avgRating>4);
+        setrestoList(filterresto);
+        
+    }
+    
+    const searchFilter = () => {
+        const filterresto = temprestoList.filter((res) => res.info.name.toLowerCase().includes(textValue.toLowerCase()));
+        console.log(filterresto);
+        setrestoList(filterresto);
+    }
+
     if(restoList.length === 0){
         return <Shimmer />
     }
     return (
         <div className="body">
             <div className="filter">
+                <input type="text" value={textValue} onChange={changeTextValue}/>
+                <button className="search-btn" onClick={searchFilter}>Search</button>
                 <button className="filter-btn" onClick={topRatedfilterfun}>Top rated restourent</button>
             </div>
             <div className="resto-container">
-                {restoList.map((res) => (<RestoComponent resData={res.info} />))}
+                {restoList.map((res) => (<RestoComponent key={res.info.id} resData={res.info} />))}
             </div>
         </div>
     )
