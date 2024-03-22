@@ -111,9 +111,12 @@ root.render(<Navigation/>)*/
 
 import Header from "./components/Header";
 import Body from "./components/Body";
+import About from "./components/About";
+import Contact from "./components/Contact";
+import Error from "./components/Error";
 
 
-
+/*
 const Applayout = () =>{
     return (
         <div className="applayout">
@@ -122,9 +125,108 @@ const Applayout = () =>{
         </div>
     )
 }
+*/
+
+
+//Routing in React
+// For getting the routing configuration we have to install react-router-dom
+// After that we have to import the createBrowserRouter
+import { createBrowserRouter,Outlet,RouterProvider  } from "react-router-dom";
+// This createBrowserRouter Takes the list of object of path
+/*const appRouter = createBrowserRouter([
+    {
+        path: "/",
+        element: <Applayout />
+    },
+    {
+        path: "/About",
+        element: <About />
+    },
+    {
+        path: "/Contact",
+        element: <Contact />
+    }
+])*/
+
+// Now we have to render the appRouter, so for that react-router-dom provide "RouterProvider". So we have to import it.
+// It help in rendering the appRouter.
+/*const root = ReactDOM.createRoot(document.getElementById("root"));
+// Way to render the RouterProvider.
+root.render(<RouterProvider router = {appRouter} />);
+// root.render(<Applayout />) 
+
+/**
+ * const appRouter = createBrowserRouter([
+    {
+        path: "/",
+        element: <Applayout />
+    },
+    {
+        path: "/About",
+        element: <About />
+    },
+    {
+        path: "/Contact",
+        element: <Contact />
+    }
+])
+ * 
+ * But doing the above appRouter, We lost our header element. But we want the header element as it is then for that we have to create the children for the Applayout component. 
+ */
+
+/*
+const Applayout = () =>{
+    return (
+        <div className="applayout">
+            <Header />
+            <Body />
+        </div>
+    )
+}
+*/
+// Now we have to remove the <Body/> from Applayout and instead of that we are giving <Outlet /> component which will help to render the children component of Applayout
+
+const Applayout = () =>{
+    return (
+        <div className="applayout">
+            <Header />
+            <Outlet /> {/**Here this outlet will replaced according to the children path
+             * Like :- Outlet will replace by About Component by giving the router localhost:1234/About
+             * Like :- Outlet will replace by Contact Component by giving the router localhost:1234/Contact
+             */}
+        </div>
+    )
+}
+
+// FOr keeping our header component
+const appRouter = createBrowserRouter([
+    {
+        path: "/",
+        element: <Applayout />,
+        children: [
+            {
+                path: "/",
+                element: <Body />
+            },
+            {
+                path: "/About",
+                element: <About />
+            },
+            {
+                path: "/Contact",
+                element: <Contact />
+            }
+        ],
+        errorElement: <Error />
+    },
+    
+])
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<Applayout />)
+// Way to render the RouterProvider.
+root.render(<RouterProvider router = {appRouter} />);
+
+
 
 
 

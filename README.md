@@ -99,3 +99,9 @@ useEffect() -> It takes two argument a. callback function b. Dependencies array
 useEffect(()=>{},[]);
 
 This callback function will call when the render cycle complete.
+
+- In useEffect the callback function is mandatory but dependencies array is optinal.
+# Use of Dependencies array:-
+- When dependencies array is not present it means useEffect(() => {}) then useEffect will call on every rendering of component
+- When dependencies array is empty it means useEffect(()=>{},[]) then useEffect will called once at the very first time when component is rendered.
+- When dependencies array have some value it means useEffect(()=>{},[btnNameReact]) then useEffect will be called whenever btnNameReact will be updated.

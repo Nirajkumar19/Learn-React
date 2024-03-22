@@ -4,7 +4,7 @@ import resList from "../utils/hardData";
 import RestoComponent from "./RestoComponent.jsx";
 import { useState } from "react";
 // import resList from "../utils/hardData"; No need of Hard data after using API
-import Shimmer from "./Shimmer.js";
+import Shimmer from "./Shimmer";
 /*
 const Body = () => {
     return (
