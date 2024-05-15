@@ -5,6 +5,7 @@ import RestoComponent from "./RestoComponent.jsx";
 import { useState } from "react";
 // import resList from "../utils/hardData"; No need of Hard data after using API
 import Shimmer from "./Shimmer";
+import { Link } from "react-router-dom";
 /*
 const Body = () => {
     return (
@@ -76,7 +77,7 @@ const Body = () => {
                 <button className="filter-btn" onClick={topRatedfilterfun}>Top rated restourent</button>
             </div>
             <div className="resto-container">
-                {restoList.map((res) => (<RestoComponent key={res.info.id} resData={res.info} />))}
+                {restoList.map((res) => (<Link key={res.info.id} to={"/RestaurantMenu/"+res.info.id}><RestoComponent  resData={res.info} /></Link>))}
             </div>
         </div>
     )

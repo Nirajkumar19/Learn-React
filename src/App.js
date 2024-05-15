@@ -114,6 +114,7 @@ import Body from "./components/Body";
 import About from "./components/About";
 import Contact from "./components/Contact";
 import Error from "./components/Error";
+import RestaurantMenu from "./components/RestaurantMenu";
 
 
 /*
@@ -198,7 +199,9 @@ const Applayout = () =>{
     )
 }
 
-// FOr keeping our header component
+// Thats why we call it as single page application because it won't load the full the page it only replace the component on their requirement.
+
+// For keeping our header component in all pages
 const appRouter = createBrowserRouter([
     {
         path: "/",
@@ -215,6 +218,12 @@ const appRouter = createBrowserRouter([
             {
                 path: "/Contact",
                 element: <Contact />
+            },
+            {
+                path: "/RestaurantMenu/:id",
+                element: <RestaurantMenu />
+                // We use "/:id" because usually we see that all the restaurant have diff diff id's so while displaying the menu of different different restaurant we route with the help of id
+                // For example: If Biryani Mahal has id 121 and Amit fast food has id as 131 then for displaying the menu of Biryani mahal we route the page as RestaurantMenu/121, similarly for Amit fast food as RestaurantMenu/131
             }
         ],
         errorElement: <Error />

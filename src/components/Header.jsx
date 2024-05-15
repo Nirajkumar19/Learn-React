@@ -21,10 +21,11 @@ const Header = () => {
             </div>
             <div className="nav-item">
                 <ul>
-                    <li><Link to ="/" >Home</Link></li>
-                    <li><Link to ="/About" >About Us</Link></li>
-                    <li><Link to ="/Contact" >Contact</Link></li>
-                    <li>Cart</li>
+                    <li className="header-li"><Link to ="/" >Home</Link></li>
+                    <li className="header-li"><Link to ="/About" >About Us</Link></li>
+                    <li className="header-li"><Link to ="/Contact" >Contact</Link></li>
+                    <li className="header-li"><Link to ="/RestaurantMenu" >Menu</Link></li>
+                    <li className="header-li">Cart</li>
                     <button className="login-btn" onClick={toggle}>{loginstate}</button>
                 </ul>
             </div>
@@ -38,6 +39,6 @@ const Header = () => {
 // Hence we use Link to instead of "a href"(anchor tag)
 
 // By using that our whole page will not load only the component on which we go will replace with the older component 
-// That why we called React as single page application because all the needed loaded at the very first time and after just component on the main page getting changed.
+// That why we called React as single page application because all the needed loaded at the very first time and after just component on the main page getting changed according to their requirement.
 
 export default Header;
