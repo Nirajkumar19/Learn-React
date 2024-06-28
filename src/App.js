@@ -115,6 +115,7 @@ import About from "./components/About";
 import Contact from "./components/Contact";
 import Error from "./components/Error";
 import RestaurantMenu from "./components/RestaurantMenu";
+import ParentClass from "./components/Parentclass";
 
 
 /*
@@ -224,6 +225,10 @@ const appRouter = createBrowserRouter([
                 element: <RestaurantMenu />
                 // We use "/:id" because usually we see that all the restaurant have diff diff id's so while displaying the menu of different different restaurant we route with the help of id
                 // For example: If Biryani Mahal has id 121 and Amit fast food has id as 131 then for displaying the menu of Biryani mahal we route the page as RestaurantMenu/121, similarly for Amit fast food as RestaurantMenu/131
+            },
+            {
+                path: "/Parent",
+                element: <ParentClass />
             }
         ],
         errorElement: <Error />

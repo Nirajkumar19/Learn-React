@@ -64,3 +64,8 @@ body{
 .filter{
     margin: 15px 0px;
 }
+
+.user-card{
+    padding: 10px;
+    border: 1px solid white;
+}

@@ -5,7 +5,7 @@ import { useParams } from "react-router-dom";
 const RestaurantMenu = () => {
 
     const [data,setdata] = useState([]);
-    const {id} = useParams(); // This hook will take the id from the path
+    const {id} = useParams(); // This hook will take the id from the router path which we declare
     const fetchMenuData = async () => {
         const menuData = await fetch("https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=12.89960&lng=80.22090&restaurantId="+id+"&catalog_qa=undefined&isMenuUx4=true&submitAction=ENTER");
         const jsonMenuData = await menuData.json();

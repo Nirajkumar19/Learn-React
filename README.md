@@ -106,3 +106,25 @@ This callback function will call when the render cycle complete.
 - When dependencies array is not present it means useEffect(() => {}) then useEffect will call on every rendering of component
 - When dependencies array is empty it means useEffect(()=>{},[]) then useEffect will called once at the very first time when component is rendered.
 - When dependencies array have some value it means useEffect(()=>{},[btnNameReact]) then useEffect will be called whenever btnNameReact will be updated.
+
+# Class based component
+- Let us have two class component, one is parent class component and another is chils class component.
+In parent class component we have one constructor and one render method, these two methods in child class component as well.
+-> In a simple way, first constructor of parent class is called then render method of parent class is called and after way in the similar fashion, constructor of child class is called and then render method is called.
+--> It is very simple explanation.
+But,
+react also give one method that is componentdidmount(), which will called when render method will mount/called.
+- So Now the order is "constructor -> render -> componentdidmount"
+
+- Because of this property we make api call inside the componentDidMount() method.
+
+- Now this componentDidMount() method in both parent as well as child component.
+Now the order is :- 
+        Parent class constructor
+        Parent class render
+        Child Constructor
+        Child render
+        Child Component did mount
+        Parent class component did mount
+
+You can clearly see the order of parent and child.
